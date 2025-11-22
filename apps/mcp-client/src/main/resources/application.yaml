@@ -8,10 +8,12 @@ spring:
     mcp:
       client:
         enabled: true
-        sse:
+#        sse:
+#        sync:
+        streamable-http:
           connections:
             mcp-playground-server:
-              url: http://localhost:8888/mcp
+              url: http://localhost:8888
     ollama:
       base-url: http://localhost:11434
       chat:

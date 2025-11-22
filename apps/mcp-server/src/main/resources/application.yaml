@@ -11,6 +11,7 @@ spring:
         enabled: true
         version: ${spring.application.version}
         instructions: This server provides tools related to getting the current time and basic math calculations.
+        protocol: STREAMABLE
 
 logging:
   level:
