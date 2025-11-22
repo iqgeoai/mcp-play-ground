@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: mcp-playground-server
+    version: 1.0.0
+  banner:
+    location: classpath:banner.txt
+  ai:
+    mcp:
+      server:
+        name: mcp-playground-server
+        enabled: true
+        version: ${spring.application.version}
+        instructions: This server provides tools related to getting the current time and basic math calculations.
+
+logging:
+  level:
+    ro:
+      micronikgrupm: DEBUG
+    org:
+      springframework: INFO
+
+server:
+  port: 8888
