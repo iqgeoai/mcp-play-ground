@@ -34,6 +34,7 @@
     <modules>
         <module>apps/mcp-server</module>
         <module>apps/mcp-client</module>
+        <module>apps/plugins/HelloWorldPlugin</module>
     </modules>
 
     <scm>
@@ -75,6 +76,11 @@
             <dependency>
                 <groupId>org.springframework.ai</groupId>
                 <artifactId>spring-ai-starter-mcp-client-webflux</artifactId>
+                <version>${spring-ai.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-model</artifactId>
                 <version>${spring-ai.version}</version>
             </dependency>
             <dependency>

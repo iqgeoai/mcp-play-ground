@@ -19,6 +19,10 @@ logging:
       micronikgrupm: DEBUG
     org:
       springframework: INFO
+mcp:
+  plugins:
+#    dir: ../../data/plugins
+    dir: data/plugins
 
 server:
   port: 8888

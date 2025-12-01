@@ -72,6 +72,14 @@ public class DynamicToolRegistry {
          */
         private String expression;
         /**
+         * Optional plugin integration: if set, the tool will invoke a method from an uploaded JAR
+         * instead of evaluating an expression. Provide the pluginId returned by the upload API,
+         * the fully-qualified className, and the methodName to invoke.
+         */
+        private String pluginId;
+        private String className;
+        private String methodName;
+        /**
          * A declared list of parameters this tool expects, for UI rendering/help purposes.
          */
         private List<String> parameters = new ArrayList<>();
