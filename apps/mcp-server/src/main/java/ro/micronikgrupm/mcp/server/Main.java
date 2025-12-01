@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import ro.micronikgrupm.mcp.server.service.TestTimeMathService;
+import ro.micronikgrupm.mcp.server.tooling.DynamicExecutorService;
 
 @SpringBootApplication(scanBasePackages = "ro.micronikgrupm.mcp")
 public class Main {
@@ -15,9 +16,10 @@ public class Main {
     }
 
     @Bean
-    public ToolCallbackProvider tools(TestTimeMathService testTimeMathService) {
+    public ToolCallbackProvider tools(TestTimeMathService testTimeMathService,
+                                     DynamicExecutorService dynamicExecutorService) {
         return MethodToolCallbackProvider.builder()
-                .toolObjects(testTimeMathService) // Takes the object with the @Tool methods
+                .toolObjects(testTimeMathService, dynamicExecutorService) // Takes the objects with the @Tool methods
                 .build();
     }
 }

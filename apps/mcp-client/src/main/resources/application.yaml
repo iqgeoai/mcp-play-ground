@@ -29,3 +29,8 @@ logging:
 
 server:
   port: 8887
+
+# Base URL of the MCP server used to fetch the dynamic tools catalog
+mcp:
+  server:
+    base-url: http://localhost:8888
