@@ -99,7 +99,7 @@ public class AIChatController {
         return chatClient.prompt()
 //                .system(systemBlock)
                 .user(cleanMessage)
-                .toolCallbacks(mcpToolProvider.getToolCallbacks())
+//                .toolCallbacks(mcpToolProvider.getToolCallbacks())
                 .call()
                 .content();
     }

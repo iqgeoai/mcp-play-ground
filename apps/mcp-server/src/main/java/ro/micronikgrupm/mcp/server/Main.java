@@ -22,21 +22,27 @@ public class Main {
      * Register core (non-plugin) tool objects into the dynamic registry at startup.
      * This keeps a single source of truth for all tool objects (core + plugins).
      */
-    @Bean
-    public ApplicationRunner registerCoreTools(DynamicToolCallbackRegistry dynamicRegistry,
-                                               TestTimeMathService testTimeMathService)
-//                                               DynamicExecutorService dynamicExecutorService)
-    {
-//        return args -> dynamicRegistry.registerCores(List.of(testTimeMathService, dynamicExecutorService));
-        return args -> dynamicRegistry.registerCores(List.of(testTimeMathService));
-    }
+//    @Bean
+//    public ApplicationRunner registerCoreTools(DynamicToolCallbackRegistry dynamicRegistry,
+//                                               TestTimeMathService testTimeMathService)
+////                                               DynamicExecutorService dynamicExecutorService)
+//    {
+////        return args -> dynamicRegistry.registerCores(List.of(testTimeMathService, dynamicExecutorService));
+//        return args -> dynamicRegistry.registerCores(List.of(testTimeMathService));
+//    }
 
     @Bean
-    public ToolCallbackProvider tools(DynamicToolCallbackRegistry dynamicRegistry) {
+    public ToolCallbackProvider tools(
+            TestTimeMathService testTimeMathService
+//            DynamicToolCallbackRegistry dynamicRegistry
+    ) {
         // Build callbacks fresh each time so newly uploaded plugins (and any core registrations) appear without restart
-        return () -> MethodToolCallbackProvider.builder()
-                .toolObjects(dynamicRegistry.listAllToolObjects().toArray())
-                .build()
-                .getToolCallbacks();
+//        return () -> MethodToolCallbackProvider.builder()
+//                .toolObjects(dynamicRegistry.listAllToolObjects().toArray())
+//                .build()
+//                .getToolCallbacks();
+        return MethodToolCallbackProvider.builder()
+                .toolObjects(testTimeMathService)
+                .build();
     }
 }

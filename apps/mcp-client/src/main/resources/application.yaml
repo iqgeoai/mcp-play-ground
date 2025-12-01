@@ -23,7 +23,8 @@ spring:
 logging:
   level:
     ro:
-      micronikgrupm: DEBUG
+      micronikgrupm:
+        mcp: DEBUG
     org:
       springframework: INFO
 

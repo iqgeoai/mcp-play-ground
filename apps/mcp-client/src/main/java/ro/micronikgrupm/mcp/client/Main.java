@@ -21,6 +21,7 @@ public class Main {
         );
         return builder
                 .defaultSystem(systemMessage.getText()) // Or use a PromptTemplate for more complex prompts
+                .defaultToolCallbacks(mcpToolProvider.getToolCallbacks())
                 .build();
     }
 }
