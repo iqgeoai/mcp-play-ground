@@ -1,0 +1,23 @@
+meta {
+  name: DELETE PLUGIN
+  type: http
+  seq: 9
+}
+
+delete {
+  url: http://localhost:8888/api/plugins/HelloWorldPlugin-23c9446b?deleteJar=true
+  body: multipartForm
+  auth: inherit
+}
+
+params:query {
+  deleteJar: true
+}
+
+body:form-urlencoded {
+  : 
+}
+
+body:file {
+  file: @file(F:\projects\mcp-play-ground\apps\plugins\HelloWorldPlugin\target\HelloWorldPlugin.jar) @contentType(application/java-archive)
+}

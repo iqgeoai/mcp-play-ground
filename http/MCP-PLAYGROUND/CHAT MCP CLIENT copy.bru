@@ -1,0 +1,15 @@
+meta {
+  name: CHAT MCP CLIENT copy
+  type: http
+  seq: 10
+}
+
+get {
+  url: http://localhost:8887/api/chat?prompt=Call multiplyNumbers(10, 9002)
+  body: none
+  auth: inherit
+}
+
+params:query {
+  prompt: Call multiplyNumbers(10, 9002)
+}

@@ -27,3 +27,4 @@ replay_pid*
 target/
 apps/mcp-client/target/
 apps/mcp-server/target/
+/confs/volume-data/

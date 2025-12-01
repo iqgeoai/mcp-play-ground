@@ -1,0 +1,23 @@
+meta {
+  name: UPLOAD PLUGIN
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:8888/api/plugins
+  body: multipartForm
+  auth: inherit
+}
+
+body:form-urlencoded {
+  : 
+}
+
+body:multipart-form {
+  file: @file(F:\projects\mcp-play-ground\apps\plugins\HelloWorldPlugin\target\HelloWorldPlugin.jar)
+}
+
+body:file {
+  file: @file(F:\projects\mcp-play-ground\apps\plugins\HelloWorldPlugin\target\HelloWorldPlugin.jar) @contentType(application/java-archive)
+}
